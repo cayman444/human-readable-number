@@ -80,12 +80,14 @@ module.exports = function toReadable(n) {
                 }
             }
         }
-        if (nStr[1] === '0') {
-            for (key in a) {
-                if (key === nStr[0]) {
-                    str += a[key] + ' ' + 'hundred' + ' '
-                }
+
+        for (key in a) {
+            if (key === nStr[0]) {
+                str += a[key] + ' ' + 'hundred' + ' '
             }
+        }
+
+        if (nStr[1] === '0') {
             for (key in a) {
                 if (key === nStr[2]) {
                     return str += a[key]
@@ -93,11 +95,6 @@ module.exports = function toReadable(n) {
             }
         }
         if (nStr[1] === '1') {
-            for (key in a) {
-                if (key === nStr[0]) {
-                    str += a[key] + ' ' + 'hundred' + ' '
-                }
-            }
             for (key in b) {
                 if (key[1] === nStr[2]) {
                     return str += b[key]
@@ -105,11 +102,6 @@ module.exports = function toReadable(n) {
             }
         }
         if (nStr[1] !== '1' && nStr[2] === '0') {
-            for (key in a) {
-                if (key === nStr[0]) {
-                    str += a[key] + ' ' + 'hundred' + ' '
-                }
-            }
             for (key in c) {
                 if (key[0] === nStr[1]) {
                     return str += c[key]
@@ -117,11 +109,6 @@ module.exports = function toReadable(n) {
             }
         }
         if (nStr[1] !== '1') {
-            for (key in a) {
-                if (key === nStr[0]) {
-                    str += a[key] + ' ' + 'hundred' + ' '
-                }
-            }
             for (key in c) {
                 if (key[0] === nStr[1]) {
                     str += c[key] + ' '
